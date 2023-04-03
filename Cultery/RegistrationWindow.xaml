@@ -15,7 +15,7 @@
             <Label Content="Отчество"/>
             <TextBox Width="150" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="LNameTextBox" />
             <Label Content="Роль"/>
-            <ComboBox Width="140" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="RoleComboBox" SelectedItem="{Binding ElementName=RoleComboBox, Path=SelectedItem.RoleID}" DisplayMemberPath="RoleID"/>
+            <ComboBox Width="140" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="RoleComboBox" SelectedItem="{Binding ElementName=RoleComboBox, Path=SelectedValue.RoleID}" DisplayMemberPath="RoleID"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0,50,0,0">

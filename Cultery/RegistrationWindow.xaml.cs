@@ -57,7 +57,7 @@ namespace Cultery
                 user.UserPatronymic = LNameTextBox.Text;
                 user.UserLogin = LoginTextBox.Text;
                 user.UserPassword = PasswordBox.Text;
-                user.UserRole = (int)RoleComboBox.SelectedItem;
+                user.Role = RoleComboBox.SelectedValue as Role;
 
                 if (Symbol.IsMatch(PasswordBox.Text) && Number.IsMatch(PasswordBox.Text) && Char.IsMatch(PasswordBox.Text) && Min.IsMatch(PasswordBox.Text))
                 {
