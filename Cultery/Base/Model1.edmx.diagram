@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="92c01ac670ce49ab9b8efd3f5b253fff" Name="Diagram1">
+        <EntityTypeShape EntityType="cutleryModel.CategoryProduct" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.Manufacture" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.Order" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.OrderProduct" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.OrderStatus" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.PickUpPoint" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.Provider" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.Role" Width="1.5" PointX="1.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.Units" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cutleryModel.User" Width="1.5" PointX="0.75" PointY="18.5" IsExpanded="true" />
+        <AssociationConnector Association="cutleryModel.FK_Product_CategoryProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="cutleryModel.FK_Product_Manufacture" ManuallyRouted="false" />
+        <AssociationConnector Association="cutleryModel.FK__OrderProd__Order__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="cutleryModel.FK_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="cutleryModel.FK_Order_PickUpPoint" ManuallyRouted="false" />
+        <AssociationConnector Association="cutleryModel.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="cutleryModel.FK__OrderProd__Produ__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="cutleryModel.FK_Product_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="cutleryModel.FK_Product_Units" ManuallyRouted="false" />
+        <AssociationConnector Association="cutleryModel.FK__User__UserRole__267ABA7A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
