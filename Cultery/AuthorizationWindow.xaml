@@ -20,13 +20,12 @@
         <StackPanel  Orientation="Horizontal"  Margin="0,100,0,0">
             <Label Content="Captcha"/>
             <TextBox Width="400" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="CaptchaTextBox"/>
-            <Button Content="OK" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Click="Button_Click"/>
+            <Button Content="OK" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Click="Button_Click" x:Name="OKButton"/>
             <TextBox Height="53" HorizontalAlignment="Left" 
                  FontSize="28" Foreground="Red" FontStyle="Italic" 
                  FontWeight="Heavy" Margin="10,0,0,0" Name="textBox1" 
                  VerticalAlignment="Top" Width="202" Background="{x:Null}" TextDecorations="Strikethrough" 
                  FontStretch="UltraCondensed"></TextBox>
-            <Button Content="RE" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Click="Button_Click_1"/>
         </StackPanel>
 
         <Button Content="Reg" Width="50" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,150,0,0" Click="Button_Click_2"/>

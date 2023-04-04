@@ -5,5 +5,103 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cultery"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MinHeight="500" MaxWidth="900" MinWidth="900">
+    <Window.Resources>
+        <DataTemplate x:Key="listTemplate">
+            <DockPanel Margin="5" MinWidth="850" HorizontalAlignment="Stretch">
+
+                <DockPanel HorizontalAlignment="Left">
+                    <!--<Image Width="100" Height="75" Source="{Binding Path=ImagePath}" />-->
+                    <Rectangle Width="75" Height="100" Fill="Azure"/>
+                </DockPanel>
+
+                <StackPanel HorizontalAlignment="Center" Margin="15,0,0,0">
+
+                    <TextBlock FontSize="16" Text="{Binding Path=ProductName}" HorizontalAlignment="Left" />
+                    <TextBlock FontSize="16" Text="{Binding Path=ProductDescription}" HorizontalAlignment="Left"/>
+                    
+                    <DockPanel>
+                        <Label FontSize="16" Content="Производитель: " HorizontalAlignment="Left"/>
+                        <TextBlock FontSize="16" Text="{Binding Path=ProductManufacturerID}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </DockPanel>
+
+                    <DockPanel>
+                        <Label FontSize="16" Content="Цена: " HorizontalAlignment="Left"/>
+                        <TextBlock FontSize="16" Text="{Binding Path=ProductCost}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </DockPanel>
+
+                </StackPanel>
+                
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Label FontSize="16" Content="На складе: " HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="16" Text="{Binding Path=ProductQuantityInStock}" HorizontalAlignment="Center"/>
+                </StackPanel>
+                
+            </DockPanel>
+
+            
+
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="listPanelTemplate">
+            <WrapPanel />
+        </ItemsPanelTemplate>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="300" MaxWidth="300" x:Name="ColumnChange"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        
+        <ListBox x:Name="ProductList"
+                 ItemTemplate="{StaticResource listTemplate}"
+                 ItemsPanel="{StaticResource listPanelTemplate}"
+                  SelectionChanged="ProductList_SelectionChanged"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1"/>
+
+        <Button Content="Выход" Grid.Row="0" Width="50" Height="20" HorizontalAlignment="Left" Margin="5,0,0,0" Click="ExitButton_Click" x:Name="ExitButton"/>
+        <TextBox Grid.Row="0" Width="400" Height="20" x:Name="Filter"/>
+        <ComboBox Width="100" Height="20" HorizontalAlignment="Right" Margin="0,0,5,0" x:Name="CoboBoxFilter">
+            <TextBlock>А-Я</TextBlock>
+            <TextBlock>Я-А</TextBlock>
+        </ComboBox>
+
+        <Button Content="Добавить" Grid.Row="2" Width="70" Height="20" HorizontalAlignment="Left" Margin="5,0,0,0" Click="AddButton_Click" x:Name="AddButton"/>
+        <Button Content="Удалить" Grid.Row="2" Width="70" Height="20" HorizontalAlignment="Left" Margin="100,0,0,0" Click="DeleteButton_Click" x:Name="DeleteButton"/>
+        <Button Content="Изменить" Grid.Row="2" Width="70" Height="20" HorizontalAlignment="Left" Margin="200,0,0,0" Click="ChangeButton_Click" x:Name="ChangeButton"/>
+
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <Label Content="Артикль номер"/>
+            <TextBox x:Name="ProductArticleNumberTextBox" Width="250" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+            <Label Content="Категория продукта"/>
+            <ComboBox x:Name="ProductCategoryComboBox" Width="250" HorizontalAlignment="Left" Margin="5,0,0,0"
+                       SelectedItem="{Binding ElementName=ProductCategoryComboBox, Path=SelectedValue.ProductCategoryID}" DisplayMemberPath="ProductCategoryID"/>
+            <Label Content="Фото продукта"/>
+            <TextBox x:Name="ProductFotoTextBox" Width="250" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+            <Label Content="Производитель"/>
+            <ComboBox x:Name="ProductManufacturerComboBox" Width="250" HorizontalAlignment="Left" Margin="5,0,0,0"
+                      SelectedItem="{Binding ElementName=ProductManufacturerComboBox, Path=SelectedValue.ProductManufacturerID}" DisplayMemberPath="ProductManufacturerID"/>
+            <Label Content="Цена"/>
+            <TextBox x:Name="ProductCostTextBox" Width="250" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+            <Label Content="Скидка"/>
+            <TextBox x:Name="ProductDiscountTextBox" Width="250" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+            <Label Content="Поставщик"/>
+            <ComboBox x:Name="ProductProviderComboBoxxxx" Width="250" HorizontalAlignment="Left" Margin="5,0,0,0"
+                      SelectedItem="{Binding ElementName=ProductProviderComboBoxxxx, Path=SelectedValue.ProductProviderID}" DisplayMemberPath="ProductProviderID"/>
+            <DockPanel Margin="0,5,0,0">
+                <Label Content="Max склад"/>
+                <TextBox x:Name="MaxOnStockTextBox" Width="50" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                <Label Content="Units"/>
+                <ComboBox x:Name="UnitsComboBox" Width="50" HorizontalAlignment="Left" Margin="5,0,0,0"
+                          SelectedItem="{Binding ElementName=UnitsComboBox, Path=SelectedValue.Units}" DisplayMemberPath="Units"/>
+            </DockPanel>
+        </StackPanel>
+
+    </Grid>
 </Window>

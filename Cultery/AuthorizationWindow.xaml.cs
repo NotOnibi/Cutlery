@@ -45,7 +45,9 @@ namespace Cultery.Pages
             {
                 if (CaptchaTextBox.Text == textBox1.Text)
                 {
-                    MessageBox.Show("Victory");
+                    MainWindow window = new MainWindow();
+                    window.Show();
+                    Close();
                 }
                 else
                 {
@@ -59,10 +61,6 @@ namespace Cultery.Pages
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            CaptchaSpawn();
-        }
         private void CaptchaSpawn()
         {
             String allowchar = " ";
